@@ -1,0 +1,29 @@
+# Auto generated files with errors to ignore.
+# Remove from this list as you refactor files.
+---
+ignore:
+- Rakefile
+- app/channels/application_cable/channel.rb
+- app/channels/application_cable/connection.rb
+- app/controllers/application_controller.rb
+- app/helpers/application_helper.rb
+- app/jobs/application_job.rb
+- app/models/application_record.rb
+- config.ru
+- config/application.rb
+- config/environment.rb
+- config/environments/production.rb
+- config/initializers/application_controller_renderer.rb
+- config/initializers/backtrace_silencers.rb
+- config/initializers/content_security_policy.rb
+- config/initializers/cookies_serializer.rb
+- config/initializers/filter_parameter_logging.rb
+- config/initializers/inflections.rb
+- config/initializers/mime_types.rb
+- config/initializers/permissions_policy.rb
+- config/initializers/wrap_parameters.rb
+- config/puma.rb
+- config/routes.rb
+- db/seeds.rb
+- test/application_system_test_case.rb
+- test/channels/application_cable/connection_test.rb

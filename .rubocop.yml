@@ -1,0 +1,13 @@
+inherit_from: .rubocop_todo.yml
+
+Style/EndOfLine:
+  EnforcedStyle: lf
+AllCops:
+  Includes:
+    - Rakefile
+    - config.ru
+  Excludes:
+    - db/**
+    - config/**
+    - script/**
+    - vendor/**/*   
