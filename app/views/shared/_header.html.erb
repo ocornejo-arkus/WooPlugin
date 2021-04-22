@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to 'Home', root_path, class: "nav-link" %>
+        </li>
+      </ul>
+
+      <div>
+        <ul class="navbar-nav navbar-right mr-auto">
+          <% if !autor_signed_in? %>
+            <li class="nav-item">
+              <%= link_to 'Iniciar sesión', new_autor_session_path, class: "nav-link" %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to 'Nuevo Artículo', new_articulo_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Cerrar sesión', destroy_autor_session_path, class: "nav-link", method: :delete %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

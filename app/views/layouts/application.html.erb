@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>WooPlugin</title>
+    <title><%= yield :titulo %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,23 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <% if false %>
+        <%= render 'shared/header' %>
+    <% end %>
+    
+    <div class="container">
+      <% if !flash.empty? %>
+        <div class="alert alert-info">
+          <ul>
+            <% flash.each do |k, value| %>
+              <li><%= value %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <%= yield %>
+    </div>
   </body>
 </html>
