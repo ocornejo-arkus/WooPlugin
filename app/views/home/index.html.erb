@@ -1,1 +1,49 @@
-<h1>hola home</h1>
+<div class="card" id="location-app">
+  <div class="card-body">
+    <h5 class="card-title">Locations</h5>
+      <div class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" v-model="search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" @click="getLocations()">Search</button>
+      </div>
+
+      <table class="table mt-3">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Level</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-if="!locations.length">
+            <td colspan="2">Empty</td>
+          </tr>
+          <tr v-for="location in locations">
+            <td scope="row">{{ location.name }}</td>
+            <td>{{ location.level }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+  var app = new Vue({
+    el: '#location-app',
+    data: {
+      search: '',
+      locations: []
+    },
+    methods: {
+      getLocations() {
+        self = this;
+        axios.get('/home/search', { params: {q: self.search} })
+          .then(res => {
+            self.locations = res.data.locations;
+          })
+      }
+    }
+  })
+</script>
